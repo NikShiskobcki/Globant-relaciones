@@ -25,7 +25,7 @@ public class JuegoService {
         while (flag == false){
             System.out.println("Ronda "+ ron);
             ron++;
-            if (i!= 1 && i==juego.getJugadores().size()-1){
+            if (i==juego.getJugadores().size()-1){
                 i = -1;
             }
             i++;

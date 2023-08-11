@@ -18,8 +18,8 @@ public class Main {
 
         System.out.println("Ingrese la cantidad de jugadores (hasta 6)");
         int participantes = rd.nextInt();
-        while (participantes < 1 || participantes>6){
-            System.out.println("Ingrese entre 1 y 6 jugadores");
+        while (participantes < 2 || participantes>6){
+            System.out.println("Ingrese entre 2 y 6 jugadores");
             participantes=rd.nextInt();
         }
         rd.nextLine();
