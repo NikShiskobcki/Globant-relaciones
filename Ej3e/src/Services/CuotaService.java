@@ -1,10 +1,8 @@
 package Services;
 import Models.*;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Scanner;
 
 public class CuotaService {
@@ -21,8 +19,8 @@ public class CuotaService {
 
         cuota.setCuotaPagada(false);
 
-        System.out.println("Ingrese fecha de vencimiento de la primera cuota");
-        cuota.setFechaVencimiento(rd.nextLine());
+        System.out.println("Ingrese fecha de vencimiento de la primera cuota. Formato YYYY-mm-dd");
+        cuota.setFechaVencimiento(LocalDate.parse(rd.nextLine(), DateTimeFormatter.ISO_LOCAL_DATE));
 
         System.out.println("Ingrese forma de pago");
         cuota.setFormaPago(rd.nextLine());
@@ -37,12 +35,10 @@ public class CuotaService {
 
         poliza.getDatosCuotas().setCuotaPagada(false);
 
-        String fechaString = poliza.getDatosCuotas().getFechaVencimiento();
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        LocalDate fecha = LocalDate.parse(fechaString,format);
-        LocalDate fechaNew = fecha.plusMonths(1);
+        poliza.getDatosCuotas().setFechaVencimiento(poliza.getDatosCuotas().getFechaVencimiento().plusMonths(1));
+        poliza.getDatosCuotas().setNumeroCuota(poliza.getDatosCuotas().getNumeroCuota()+1);
 
-        poliza.getDatosCuotas().setFechaVencimiento(fechaNew.toString());
+        System.out.println("Informacion de la proxima cuota:");
 
         System.out.println(poliza.getDatosCuotas().toString());
 

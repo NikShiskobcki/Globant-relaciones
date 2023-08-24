@@ -1,11 +1,13 @@
 package Models;
 
+import java.time.LocalDate;
+
 public class Poliza {
     private Vehiculo vehiculo;
     private Cliente cliente;
     private String numPoliza;
-    private String fechaInicioPoliza;
-    private String fechaFinPoliza;
+    private LocalDate fechaInicioPoliza;
+    private LocalDate fechaFinPoliza;
     private int cantidadCuotas;
     private String formaPago;
     private int montoTotalAsegurado;
@@ -18,7 +20,7 @@ public class Poliza {
 
     }
 
-    public Poliza(Vehiculo vehiculo, Cliente cliente, String numPoliza, String fechaInicioPoliza, String fechaFinPoliza,
+    public Poliza(Vehiculo vehiculo, Cliente cliente, String numPoliza, LocalDate fechaInicioPoliza, LocalDate fechaFinPoliza,
                   int cantidadCuotas, String formaPago, int montoTotalAsegurado, boolean incluyeGranizo,
                   int montoMaximoGranizo, String tipoCobertura, Cuota datosCuotas) {
         this.vehiculo = vehiculo;
@@ -59,19 +61,19 @@ public class Poliza {
         this.numPoliza = numPoliza;
     }
 
-    public String getFechaInicioPoliza() {
+    public LocalDate getFechaInicioPoliza() {
         return fechaInicioPoliza;
     }
 
-    public void setFechaInicioPoliza(String fechaInicioPoliza) {
+    public void setFechaInicioPoliza(LocalDate fechaInicioPoliza) {
         this.fechaInicioPoliza = fechaInicioPoliza;
     }
 
-    public String getFechaFinPoliza() {
+    public LocalDate getFechaFinPoliza() {
         return fechaFinPoliza;
     }
 
-    public void setFechaFinPoliza(String fechaFinPoliza) {
+    public void setFechaFinPoliza(LocalDate fechaFinPoliza) {
         this.fechaFinPoliza = fechaFinPoliza;
     }
 

@@ -1,6 +1,8 @@
 package Services;
 import Models.*;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class PolizaService {
@@ -15,11 +17,11 @@ public class PolizaService {
         System.out.println("Ingrese numero de poliza");
         poliza.setNumPoliza(rd.nextLine());
 
-        System.out.println("Ingrese fecha inicio de poliza");
-        poliza.setFechaInicioPoliza(rd.nextLine());
+        System.out.println("Ingrese fecha inicio de poliza. Formato YYYY-mm-dd");
+        poliza.setFechaInicioPoliza(LocalDate.parse(rd.nextLine(), DateTimeFormatter.ISO_LOCAL_DATE));
 
-        System.out.println("Ingrese fecha fin de poliza");
-        poliza.setFechaFinPoliza(rd.nextLine());
+        System.out.println("Ingrese fecha fin de poliza. Formato YYYY-mm-dd");
+        poliza.setFechaFinPoliza(LocalDate.parse(rd.nextLine(), DateTimeFormatter.ISO_LOCAL_DATE));
 
         System.out.println("Ingrese cantidad de cuotas");
         poliza.setCantidadCuotas(rd.nextInt());

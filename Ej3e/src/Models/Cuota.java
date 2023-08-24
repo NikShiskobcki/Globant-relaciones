@@ -1,16 +1,18 @@
 package Models;
 
+import java.time.LocalDate;
+
 public class Cuota {
     private int numeroCuota;
     private int totalCuota;
     private boolean cuotaPagada;
-    private String fechaVencimiento;
+    private LocalDate fechaVencimiento;
     private String formaPago;
 
     public Cuota() {
     }
 
-    public Cuota(int numeroCuota, int totalCuota, boolean cuotaPagada, String fechaVencimiento, String formaPago) {
+    public Cuota(int numeroCuota, int totalCuota, boolean cuotaPagada, LocalDate fechaVencimiento, String formaPago) {
         this.numeroCuota = numeroCuota;
         this.totalCuota = totalCuota;
         this.cuotaPagada = cuotaPagada;
@@ -42,11 +44,11 @@ public class Cuota {
         this.cuotaPagada = cuotaPagada;
     }
 
-    public String getFechaVencimiento() {
+    public LocalDate getFechaVencimiento() {
         return fechaVencimiento;
     }
 
-    public void setFechaVencimiento(String fechaVencimiento) {
+    public void setFechaVencimiento(LocalDate fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
 
